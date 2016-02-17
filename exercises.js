@@ -5,7 +5,7 @@
 // ---------------------
 // Define a function max() that takes two numbers as arguments and returns the largest of them. Use the if-then-else construct available in Javascript.
 // ---------------------
-
+console.assert(max(3,2) == 2);
 function max(f, s){
     "use strict";
     if (f > s){
@@ -19,7 +19,7 @@ function max(f, s){
 // ---------------------
 // Define a function maxOfThree() that takes three numbers as arguments and returns the largest of them.
 // ---------------------
-// console.assert(maxOfThree(10,20,300) == 300)
+console.assert(maxOfThree(10,20,300) == 300)
 function maxOfThree(a,b,c){
     "use strict";
     if (c>a){
@@ -37,8 +37,8 @@ function maxOfThree(a,b,c){
 // ---------------------
 // Write a function that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise.
 // ---------------------
-// isVowel("r");
-// console.assert(isVowel("r") == false);
+isVowel("r");
+console.assert(isVowel("r") == false);
 function isVowel(char){
     "use strict";
     if (char === "a" || char === "e" || char === "i" || char === "o" || char === "u" || char === " "){
@@ -67,9 +67,7 @@ console.assert(rovarspraket('this is fun') == "tothohisos isos fofunon");
 function rovarspraket(phrase){
     "use strict";
     var final = "";
-    var letterSplit = phrase.split("")
-    // console.log(letterSplit);
-    // console.log(isVowel(letterSplit[4]))
+    var letterSplit = phrase.split("");
 
     for (var i=0; i<letterSplit.length; i++){
       if (isVowel(letterSplit[i])){
@@ -170,14 +168,14 @@ charFreq("abbabcbdbabdbdbabababcbcbab");
 function charFreq(string){
   var strSplit = string.split('');
   
+
     "use strict";
     //...
 }
 
-// console.assert(max(3,2) == 2);
-// max(1,2);
-// console.assert(maxOfThree(1,2,3) == 3);
-// console.assert(findLongestWord("this is the backdrop of a song") == "backdrop");
+max(1,2);
+console.assert(maxOfThree(1,2,3) == 3);
+console.assert(findLongestWord("this is the backdrop of a song") == "backdrop");
 
-// maxOfThree(1,2,3)
-// findLongestWord("this is the backdrop of a song");
+maxOfThree(1,2,3)
+findLongestWord("this is the backdrop of a song");
