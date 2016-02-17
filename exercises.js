@@ -190,4 +190,4 @@ function charFreq(string){
   //   }
   // }
   //   return arrObj
-}console.log(charFreq("abcdddeiidis"))
+}
