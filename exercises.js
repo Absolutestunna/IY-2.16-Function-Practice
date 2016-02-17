@@ -129,7 +129,7 @@ filterLongWords(["words", "beastly", "coding", "s"], 4)
 console.assert(filterLongWords(["words", "beastly", "coding", "s"], 4) == ["words", "beastly", "coding"]);
 function filterLongWords(words, i){
     "use strict";
-    var update = [];
+    // var update = [];
     return words.filter(function(currentValue){
       return currentValue > 4;
       // if (currentValue.length > i){
@@ -141,20 +141,31 @@ function filterLongWords(words, i){
 }
 
 // ---------------------
-// Write a function charFreq() that takes a string and builds a frequency listing of the characters contained in it. Represent the frequency listing as a Javascript object. Try it with something like charFreq("abbabcbdbabdbdbabababcbcbab").
+// Write a function charFreq() that takes a string and builds a frequency listing of the characters contained in it.
+//Represent the frequency listing as a Javascript object. Try it with something like
+//charFreq("abbabcbdbabdbdbabababcbcbab").
 // ---------------------
 charFreq("abcd");
 console.assert(charFreq("abcd") == charFreq({a:1,b:1,c:1,d:1}));
 function charFreq(string){
-  var arrObj = {};
-  for (var i=0; i<=string.length; i++){
-    var char = string.charAt(i);
-    if (arrObj[char]===NaN ){
-      arrObj.char++;
+
+  var frequencies = {};
+  for (var i=string.length-1; i>=0; i--){
+    if (!frequencies.hasOwnProperty(string.charAt(i))){
+      frequencies[string.charAt(i)] = 1;
     }else {
-      arrObj[char] = 1;
+      frequencies[string.charAt(i)] += 1;
     }
-  }return arrObj;
+  } return frequencies;
+  // var arrObj = {};
+  // for (var i=0; i<=string.length; i++){
+  //   var char = string.charAt(i);
+  //   if (arrObj[char]===NaN ){
+  //     arrObj.char++;
+  //   }else {
+  //     arrObj[char] = 1;
+  //   }
+  // }return arrObj;
 
   // var strSplit = string.split('');
   // var aa = 0, bb = 0, cc = 0, dd = 0;
