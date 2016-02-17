@@ -158,17 +158,17 @@ function charFreq(string){
     arrObj = {};
     if (char === "a"){
       aa++;
-      arrObj.a = aa;
+      arrObj."a" = aa;
     } else if (char === "b"){
       bb++;
-      arrObj.b = bb;
+      arrObj."b" = bb;
 
     } else if (char === "c"){
       cc++;
-      arrObj.c = cc;
+      arrObj."c" = cc;
     } else {
       dd++
-      arrObj.d = dd;
+      arrObj."d" = dd;
     }
   }
     return arrObj
