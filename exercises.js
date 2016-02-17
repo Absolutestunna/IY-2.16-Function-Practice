@@ -6,7 +6,7 @@
 // Define a function max() that takes two numbers as arguments and returns the largest of them. Use the if-then-else construct available in Javascript.
 // ---------------------
 max(3,2)
-console.assert(max(3,2) == 2);
+console.assert(max(3,2) == 3);
 function max(f, s){
     "use strict";
     if (f > s){
@@ -70,10 +70,9 @@ sum([1,2,3,4]);
 console.assert(sum([1,2,3,4])==10);
  function sum(arr){
     "use strict";
-    var arrS = arr.reduce(function(previousValue, currentValue) {
+    return arr.reduce(function(previousValue, currentValue) {
       return previousValue + currentValue;
     });
-    return arrS;
     //...
  }
 multiply([1,2,3,4])
@@ -81,10 +80,9 @@ console.assert(multiply([1,2,3,4])==24);
 function multiply(arr){
     "use strict";
     //...
-    var arrS = arr.reduce(function(previousValue, currentValue) {
+    return arr.reduce(function(previousValue, currentValue) {
       return previousValue * currentValue;
     });
-    return arrS;
 
 }
 
@@ -104,7 +102,7 @@ function reverse(phrase){
 // ---------------------
 // Write a function findLongestWord() that takes an array of words and returns the length of the longest one.
 // ---------------------
-console.assert(findLongestWord("this is the backdrop of a song") == "backdrop");
+console.assert(findLongestWord("this is the backdrop of a song") == 8);
 function findLongestWord(words){
    "use strict";
 	    var arr = words.split(" ");
@@ -120,26 +118,25 @@ function findLongestWord(words){
 	      } final = update;
 
 	    }
-	    return final
+	    return final.length;
 	}
 
 // ---------------------
-// Write a function filterLongWords() that takes an array of words and an integer i and returns the array of words that are longer than i.
+// Write a function filterLongWords() that takes an array of words and an integer i and returns the array of
+//words that are longer than i.
 // ---------------------
 filterLongWords(["words", "beastly", "coding", "s"], 4)
-console.assert(filterLongWords(["words", "beastly", "coding", "s"], 4) == ("words", "beastly", "coding"));
+console.assert(filterLongWords(["words", "beastly", "coding", "s"], 4) == ["words", "beastly", "coding"]);
 function filterLongWords(words, i){
     "use strict";
     var update = [];
-    words.map(function(currentValue){
-      if (currentValue.length > i){
-        update.push(currentValue);
-        return update
-      }
-    })
+    return words.filter(function(currentValue){
+      return currentValue > 4;
+      // if (currentValue.length > i){
+      //   update.push(currentValue);
+      //   return update
 
-    console.log(update);
-    return update;
+    });
     //...
 }
 
@@ -147,29 +144,39 @@ function filterLongWords(words, i){
 // Write a function charFreq() that takes a string and builds a frequency listing of the characters contained in it. Represent the frequency listing as a Javascript object. Try it with something like charFreq("abbabcbdbabdbdbabababcbcbab").
 // ---------------------
 charFreq("abcd");
-console.assert(charFreq(string) == arrObj({a:1,b:1,c:1,d:1}));
+console.assert(charFreq("abcd") == charFreq({a:1,b:1,c:1,d:1}));
 function charFreq(string){
-  var strSplit = string.split('');
-  var aa = 0, bb = 0, cc = 0, dd = 0;
   var arrObj = {};
-
-  for (var i=0; i<strSplit.length; i++){
-    var char = strSplit[i];
-    arrObj = {};
-    if (char === "a"){
-      aa++;
-      arrObj."a" = aa;
-    } else if (char === "b"){
-      bb++;
-      arrObj."b" = bb;
-
-    } else if (char === "c"){
-      cc++;
-      arrObj."c" = cc;
-    } else {
-      dd++
-      arrObj."d" = dd;
+  for (var i=0; i<=string.length; i++){
+    var char = string.charAt(i);
+    if (arrObj[char]===NaN ){
+      arrObj.char++;
+    }else {
+      arrObj[char] = 1;
     }
-  }
-    return arrObj
-}
+  }return arrObj;
+
+  // var strSplit = string.split('');
+  // var aa = 0, bb = 0, cc = 0, dd = 0;
+  // var arrObj = {};
+  //
+  // for (var i=0; i<strSplit.length; i++){
+  //   var char = strSplit[i];
+  //   arrObj = {};
+  //   if (char === "a"){
+  //     aa++;
+  //     arrObj."a" = aa;
+  //   } else if (char === "b"){
+  //     bb++;
+  //     arrObj."b" = bb;
+  //
+  //   } else if (char === "c"){
+  //     cc++;
+  //     arrObj."c" = cc;
+  //   } else {
+  //     dd++
+  //     arrObj."d" = dd;
+  //   }
+  // }
+  //   return arrObj
+}console.log(charFreq("abcdddeiidis"))
