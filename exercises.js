@@ -5,6 +5,7 @@
 // ---------------------
 // Define a function max() that takes two numbers as arguments and returns the largest of them. Use the if-then-else construct available in Javascript.
 // ---------------------
+max(3,2)
 console.assert(max(3,2) == 2);
 function max(f, s){
     "use strict";
@@ -19,50 +20,32 @@ function max(f, s){
 // ---------------------
 // Define a function maxOfThree() that takes three numbers as arguments and returns the largest of them.
 // ---------------------
+maxOfThree(10,20,300)
 console.assert(maxOfThree(10,20,300) == 300)
 function maxOfThree(a,b,c){
     "use strict";
-    if (c>a){
-      return c
-    }else {
-      return a
-    }
-    if (c>b){
-      return c
-    } else {
-      return b
-    }
+    return max(max(a,b), c);
+
 }
 
 // ---------------------
 // Write a function that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise.
 // ---------------------
-isVowel("r");
 console.assert(isVowel("r") == false);
 function isVowel(char){
     "use strict";
     if (char === "a" || char === "e" || char === "i" || char === "o" || char === "u" || char === " "){
-      return true
+      return true;
     }else {
-      return false
+      return false;
     }
 
-  //   var vowels = ["a","e","i","o","u"," "];
-  //   for (var i=0; i<vowels.length; i++){
-  //     if (char != vowels[i]){
-  //       return false;
-  //   }else {
-  //     return true;
-  //   }
-  // }
-  //   //...
 }
 
 // ---------------------
 // Write a function rovarspraket() that will translate a text into "rövarspråket". That is, double every consonant and place an occurrence of "o" in between. For example, translate("this is fun") should return the string "tothohisos isos fofunon".
 // ---------------------
 rovarspraket('this is fun');
-// console.log(rovarspraket("this is fun"))
 console.assert(rovarspraket('this is fun') == "tothohisos isos fofunon");
 function rovarspraket(phrase){
     "use strict";
@@ -71,11 +54,10 @@ function rovarspraket(phrase){
 
     for (var i=0; i<letterSplit.length; i++){
       if (isVowel(letterSplit[i])){
-        final+=letterSplit[i];
+        final += letterSplit[i];
       } else {
         final += letterSplit[i] + "o" + letterSplit[i];
       }
-
     }
     return final;
     //...
@@ -122,7 +104,7 @@ function reverse(phrase){
 // ---------------------
 // Write a function findLongestWord() that takes an array of words and returns the length of the longest one.
 // ---------------------
-
+console.assert(findLongestWord("this is the backdrop of a song") == "backdrop");
 function findLongestWord(words){
    "use strict";
 	    var arr = words.split(" ");
@@ -164,20 +146,30 @@ function filterLongWords(words, i){
 // ---------------------
 // Write a function charFreq() that takes a string and builds a frequency listing of the characters contained in it. Represent the frequency listing as a Javascript object. Try it with something like charFreq("abbabcbdbabdbdbabababcbcbab").
 // ---------------------
-charFreq("abbabcbdbabdbdbabababcbcbab");
+charFreq("abcd");
+console.assert(charFreq(string) == arrObj({a:1,b:1,c:1,d:1}));
 function charFreq(string){
   var strSplit = string.split('');
-  var arrObj = {
-    
-  };
+  var aa = 0, bb = 0, cc = 0, dd = 0;
+  var arrObj = {};
 
-    "use strict";
-    //...
+  for (var i=0; i<strSplit.length; i++){
+    var char = strSplit[i];
+    arrObj = {};
+    if (char === "a"){
+      aa++;
+      arrObj.a = aa;
+    } else if (char === "b"){
+      bb++;
+      arrObj.b = bb;
+
+    } else if (char === "c"){
+      cc++;
+      arrObj.c = cc;
+    } else {
+      dd++
+      arrObj.d = dd;
+    }
+  }
+    return arrObj
 }
-
-max(1,2);
-console.assert(maxOfThree(1,2,3) == 3);
-console.assert(findLongestWord("this is the backdrop of a song") == "backdrop");
-
-maxOfThree(1,2,3)
-findLongestWord("this is the backdrop of a song");
