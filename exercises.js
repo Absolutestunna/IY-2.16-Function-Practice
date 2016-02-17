@@ -167,7 +167,9 @@ function filterLongWords(words, i){
 charFreq("abbabcbdbabdbdbabababcbcbab");
 function charFreq(string){
   var strSplit = string.split('');
-  
+  var arrObj = {
+    
+  };
 
     "use strict";
     //...
